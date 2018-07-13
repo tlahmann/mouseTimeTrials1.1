@@ -1,0 +1,120 @@
+#canvas0  {
+    position: fixed;
+    border: 2px solid;
+    right: 0;
+    left: 0px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    
+}
+
+ #canvas1 {
+    position: fixed;
+    border: 8px solid;
+    right: 100px;
+    left: 0px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    
+}
+
+
+
+
+
+
+.buttonContainer{
+   position: fixed;
+    top: 50px;
+    left:50px;
+    width:100px;
+}
+
+
+
+
+
+
+
+#display-area {
+ position: fixed;
+ top: 30px;
+ left: 600px;
+ width:50px;
+ font-family: 'Gaegu', cursive;
+ margin-left: 0px;
+ margin-top: 0px;
+ width: 100px;
+ height: 20px;   
+ background: transparent;
+ border: none;
+ color: black;   
+ font-size:50px;
+ font-weight:700;
+}
+
+#toggle-button {
+ position: fixed;
+ top:280px;
+ left:550px;
+ width:60px;
+ font-family: 'Chela One', cursive;
+  background: green;
+border: none;
+color: black;   
+font-size:20px;
+font-weight:600;
+}
+
+#toggle-button2 {
+ position: fixed;
+ top:280px;
+ left:500px;
+ width:50px;
+ font-family: 'Chela One', cursive;
+  background: red;
+border: none;
+                color: black;   
+                font-size: 20;
+                font-weight:700;
+}
+
+#reset-button {
+ position: fixed;
+ top:45px;
+ left:430px;
+ width:150px;
+ font-family: 'Chela One', cursive;
+ background: yellow;
+                border: none;
+                color: black;   
+                font-size:24px;
+                font-weight:600;
+}
+
+
+
+.class='but' {
+    float:left;
+}
+
+
+#canvas0 {
+    z-index: 0;
+}
+
+#canvas1 {
+    z-index: 1;
+}
+
+#canvas2 {
+    z-index: 2;
+}
+
+#canvas3 {
+    z-index: 3;
+}

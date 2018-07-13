@@ -1,0 +1,86 @@
+<html>
+
+<head>
+
+<title>lineTrials</title>
+<script src="laptimer.js"> </script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Chela+One|Gaegu" rel="stylesheet">
+
+</head>
+
+    <body>
+     
+     
+     
+            <!-- Game Area / Canvas -->
+           
+        <div>
+            
+            <canvas id="canvas0" width="1000" height="600" style="position: absolute; top:0; left:0; border:10px solid black;" >
+            
+            <img id="track" src="track.png" alt="course" width="220" height="277" onclick="reset()">
+            
+                
+
+                    <script>
+
+
+                        // grass background
+                        var c = document.getElementById("canvas0");
+                        var ctx = c.getContext("2d");
+                        var w = 1000;
+                        var h = 600;
+
+                        ctx.beginPath();
+                        ctx.rect(0, 0, w, h);
+                        ctx.fillStyle = "darkgreen";
+                        ctx.fill();
+
+                            
+
+                        //race track image
+
+                        window.onload = function() {
+                        var c = document.getElementById("canvas0");
+                        var ctx = c.getContext("2d");
+                        var img = document.getElementById("track");
+                        ctx.drawImage(img, 90, 100, 800, 400)
+
+                                }
+
+
+                    </script>
+
+           
+        
+        
+
+
+        </div>
+                    
+                <!-- Stopwatch Buttons -->
+                <div class='buttonContainer'>
+                    
+                    <button id="toggle-button" onmouseover = "start()">Start</button>
+                    <button id="toggle-button2" onmouseover = "stop()">Stop</button>
+                    <button id="reset-button" onClick="reset()">Reset Clock</button>
+                
+                </div>
+                
+               
+                <!-- Stopwatch Number Display -->
+                <div>
+                
+                    <output id="display-area">00:00:00.000</output>
+                
+                </div>
+
+    
+
+    </body>
+
+
+
+
+</html>
