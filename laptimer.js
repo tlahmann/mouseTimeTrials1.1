@@ -1,47 +1,28 @@
+let timeStart = null
+let started = null
 
+function start () {
+  timeStart = new Date().getTime()
 
-        var timeBegan = null
-            , timeStopped = null
-            , stoppedDuration = 0
-            , started = null;
+  started = setInterval(clockRunning, 10)
+}
 
-        function start() {
-            if (timeBegan === null) {
-                timeBegan = new Date();
-            }
+function stop () {
+  clearInterval(started)
+}
 
-            if (timeStopped !== null) {
-                stoppedDuration += (new Date() - timeStopped);
-            }
-            console.log(stoppedDuration);
+function reset() {
+  clearInterval(started);
+  document.getElementById("display-area").innerHTML = "00:00:00.000";
+}
 
-            started = setInterval(clockRunning, 10);    
-        }
+function clockRunning () {
+  let timeElapsed = new Date().getTime() - timeStart
+  let ms = Math.floor(timeElapsed % 1000).toFixed(0)
+  let sec = Math.floor((timeElapsed / 1000) % 60).toFixed(0)
+  let min = Math.floor((timeElapsed / (1000 * 60)) % 60).toFixed(0)
+  let hour = Math.floor((timeElapsed / (1000 * 60 * 60)) % 24).toFixed(0)
 
-        function stop() {
-            timeStopped = new Date();
-            clearInterval(started);
-        }
-         
-        function reset() {
-            clearInterval(started);
-            stoppedDuration = 0;
-            timeBegan = null;
-            timeStopped = null;
-            document.getElementById("display-area").innerHTML = "00:00:00.000";
-        }
-
-        function clockRunning(){
-            var currentTime = new Date()
-                , timeElapsed = new Date(currentTime - timeBegan - stoppedDuration)
-                , hour = timeElapsed.getUTCHours()
-                , min = timeElapsed.getUTCMinutes()
-                , sec = timeElapsed.getUTCSeconds()
-                , ms = timeElapsed.getUTCMilliseconds();
-
-            document.getElementById("display-area").innerHTML = 
-                (hour > 9 ? hour : "0" + hour) + ":" + 
-                (min > 9 ? min : "0" + min) + ":" + 
-                (sec > 9 ? sec : "0" + sec) + "." + 
-                (ms > 99 ? ms : ms > 9 ? "0" + ms : "00" + ms);
-        }
+  document.getElementById('display-area').innerHTML =
+    hour.padStart(2, '0') + ':' + min.padStart(2, '0') + ':' + sec.padStart(2, '0') + ':' + ms.padStart(3, '0')
+}
